@@ -1,2 +1,2 @@
 # GoCookBookAPI
-BackEnd or my cookbook WebApp
+BackEnd for my cookbook WebApp
