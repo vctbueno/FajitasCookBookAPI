@@ -3,16 +3,15 @@ package main
 import (
 	"log"
 
-	"github.com/gin-gonic/gin"
-	"github.com/webgoprojects/go-gin-template/controllers"
 	"github.com/webgoprojects/go-gin-template/middleware"
-	"github.com/webgoprojects/go-gin-template/models"
+	//"github.com/webgoprojects/go-gin-template/models"
+	"github.com/webgoprojects/go-gin-template/routers"
 )
 
 func main() {
-	r := gin.Default()
+	r := routers.SetupRouter()
 
-	models.ConnectDatabase()
+	//	models.ConnectDatabase()
 
 	// Set trusted proxies
 	_ = r.SetTrustedProxies([]string{"192.168.0.1"})
@@ -21,10 +20,6 @@ func main() {
 
 	// Middleware
 	r.Use(middleware.Logger())
-
-	// Routes
-	r.GET("/", controllers.Index)
-	r.GET("/about", controllers.About)
 
 	// Serve static files
 	r.Static("/static", "./static")
