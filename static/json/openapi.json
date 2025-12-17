@@ -5,11 +5,24 @@
         "version": "1.0.0",
         "description": "OpenApi documentation for the FajitasCookBookAPI"
     },
+    "tags": [
+        {
+            "name": "Ingredient",
+            "description": ""
+        },
+        {
+            "name": "Recette",
+            "description": ""
+        }
+    ],
     "paths": {
         "/ingredients": {
             "summary": "Path used to manage the list of ingredients.",
             "description": "The REST endpoint/path used to list and create zero or more `Ingredient` entities.  This path contains a `GET` and `POST` operation to perform the list and create tasks, respectively.",
             "get": {
+                "tags": [
+                    "Ingredient"
+                ],
                 "responses": {
                     "200": {
                         "content": {
@@ -27,8 +40,7 @@
                 },
                 "operationId": "getIngredients",
                 "summary": "List All Ingredients",
-                "description": "Gets a list of all `Ingredient` entities.",
-                "tags": ["Ingredient"]
+                "description": "Gets a list of all `Ingredient` entities."
             },
             "post": {
                 "requestBody": {
@@ -42,6 +54,9 @@
                     },
                     "required": true
                 },
+                "tags": [
+                    "Ingredient"
+                ],
                 "responses": {
                     "201": {
                         "description": "Successful response."
@@ -49,14 +64,16 @@
                 },
                 "operationId": "createIngredient",
                 "summary": "Create a Ingredient",
-                "description": "Creates a new instance of a `Ingredient`.",
-                "tags": ["Ingredient"]
+                "description": "Creates a new instance of a `Ingredient`."
             }
         },
         "/ingredients/{ingredientId}": {
             "summary": "Path used to manage a single Ingredient.",
             "description": "The REST endpoint/path used to get, update, and delete single instances of an `Ingredient`.  This path contains `GET`, `PUT`, and `DELETE` operations used to perform the get, update, and delete tasks, respectively.",
             "get": {
+                "tags": [
+                    "Ingredient"
+                ],
                 "responses": {
                     "200": {
                         "content": {
@@ -71,8 +88,7 @@
                 },
                 "operationId": "getIngredient",
                 "summary": "Get a Ingredient",
-                "description": "Gets the details of a single instance of a `Ingredient`.",
-                "tags": ["Ingredient"]
+                "description": "Gets the details of a single instance of a `Ingredient`."
             },
             "put": {
                 "requestBody": {
@@ -86,6 +102,9 @@
                     },
                     "required": true
                 },
+                "tags": [
+                    "Ingredient"
+                ],
                 "responses": {
                     "202": {
                         "description": "Successful response."
@@ -93,10 +112,12 @@
                 },
                 "operationId": "updateIngredient",
                 "summary": "Update a Ingredient",
-                "description": "Updates an existing `Ingredient`.",
-                "tags": ["Ingredient"]
+                "description": "Updates an existing `Ingredient`."
             },
             "delete": {
+                "tags": [
+                    "Ingredient"
+                ],
                 "responses": {
                     "204": {
                         "description": "Successful response."
@@ -104,8 +125,7 @@
                 },
                 "operationId": "deleteIngredient",
                 "summary": "Delete a Ingredient",
-                "description": "Deletes an existing `Ingredient`.",
-                "tags": ["Ingredient"]
+                "description": "Deletes an existing `Ingredient`."
             },
             "parameters": [
                 {
@@ -123,6 +143,9 @@
             "summary": "Path used to manage the list of recettes.",
             "description": "The REST endpoint/path used to list and create zero or more `recette` entities.  This path contains a `GET` and `POST` operation to perform the list and create tasks, respectively.",
             "get": {
+                "tags": [
+                    "Recette"
+                ],
                 "responses": {
                     "200": {
                         "content": {
@@ -140,8 +163,7 @@
                 },
                 "operationId": "getrecettes",
                 "summary": "List All recettes",
-                "description": "Gets a list of all `recette` entities.",
-                "tags": ["Recette"]
+                "description": "Gets a list of all `recette` entities."
             },
             "post": {
                 "requestBody": {
@@ -155,6 +177,9 @@
                     },
                     "required": true
                 },
+                "tags": [
+                    "Recette"
+                ],
                 "responses": {
                     "201": {
                         "description": "Successful response."
@@ -162,14 +187,16 @@
                 },
                 "operationId": "createrecette",
                 "summary": "Create a recette",
-                "description": "Creates a new instance of a `recette`.",
-                "tags": ["Recette"]
+                "description": "Creates a new instance of a `recette`."
             }
         },
         "/recettes/{recetteId}": {
             "summary": "Path used to manage a single recette.",
             "description": "The REST endpoint/path used to get, update, and delete single instances of an `recette`.  This path contains `GET`, `PUT`, and `DELETE` operations used to perform the get, update, and delete tasks, respectively.",
             "get": {
+                "tags": [
+                    "Recette"
+                ],
                 "responses": {
                     "200": {
                         "content": {
@@ -184,8 +211,7 @@
                 },
                 "operationId": "getrecette",
                 "summary": "Get a recette",
-                "description": "Gets the details of a single instance of a `recette`.",
-                "tags": ["Recette"]
+                "description": "Gets the details of a single instance of a `recette`."
             },
             "put": {
                 "requestBody": {
@@ -199,6 +225,9 @@
                     },
                     "required": true
                 },
+                "tags": [
+                    "Recette"
+                ],
                 "responses": {
                     "202": {
                         "description": "Successful response."
@@ -206,10 +235,12 @@
                 },
                 "operationId": "updaterecette",
                 "summary": "Update a recette",
-                "description": "Updates an existing `recette`.",
-                "tags": ["Recette"]
+                "description": "Updates an existing `recette`."
             },
             "delete": {
+                "tags": [
+                    "Recette"
+                ],
                 "responses": {
                     "204": {
                         "description": "Successful response."
@@ -217,8 +248,7 @@
                 },
                 "operationId": "deleterecette",
                 "summary": "Delete a recette",
-                "description": "Deletes an existing `recette`.",
-                "tags": ["Recette"]
+                "description": "Deletes an existing `recette`."
             },
             "parameters": [
                 {
@@ -236,6 +266,9 @@
             "summary": "Chemin utilisé pour gérer toutes les recettes utilisants un ingrédient donné.",
             "description": "Le Endpoint utilisé pour intéragir avec les recettes contenant un ingrédient précis. Il permet l'opération `GET`.",
             "get": {
+                "tags": [
+                    "Recette"
+                ],
                 "parameters": [
                     {
                         "name": "IngredientId",
@@ -266,8 +299,7 @@
                     }
                 },
                 "summary": "Liste toutes les recette qui utilisent l'ingrédient donné.",
-                "description": "Renvoie une liste de toutes les recettes qui contiennent l'ingrédient demandé.",
-                "tags": ["Recette"]
+                "description": "Renvoie une liste de toutes les recettes qui contiennent l'ingrédient demandé."
             }
         }
     },
