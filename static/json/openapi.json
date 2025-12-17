@@ -1,0 +1,452 @@
+{
+    "openapi": "3.0.2",
+    "info": {
+        "title": "FajitasCookBookApi",
+        "version": "1.0.0",
+        "description": "OpenApi documentation for the FajitasCookBookAPI"
+    },
+    "paths": {
+        "/ingredients": {
+            "summary": "Path used to manage the list of ingredients.",
+            "description": "The REST endpoint/path used to list and create zero or more `Ingredient` entities.  This path contains a `GET` and `POST` operation to perform the list and create tasks, respectively.",
+            "get": {
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/Ingredient"
+                                    }
+                                }
+                            }
+                        },
+                        "description": "Successful response - returns an array of `Ingredient` entities."
+                    }
+                },
+                "operationId": "getIngredients",
+                "summary": "List All Ingredients",
+                "description": "Gets a list of all `Ingredient` entities.",
+                "tags": ["Ingredient"]
+            },
+            "post": {
+                "requestBody": {
+                    "description": "A new `Ingredient` to be created.",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Ingredient"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "201": {
+                        "description": "Successful response."
+                    }
+                },
+                "operationId": "createIngredient",
+                "summary": "Create a Ingredient",
+                "description": "Creates a new instance of a `Ingredient`.",
+                "tags": ["Ingredient"]
+            }
+        },
+        "/ingredients/{ingredientId}": {
+            "summary": "Path used to manage a single Ingredient.",
+            "description": "The REST endpoint/path used to get, update, and delete single instances of an `Ingredient`.  This path contains `GET`, `PUT`, and `DELETE` operations used to perform the get, update, and delete tasks, respectively.",
+            "get": {
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Ingredient"
+                                }
+                            }
+                        },
+                        "description": "Successful response - returns a single `Ingredient`."
+                    }
+                },
+                "operationId": "getIngredient",
+                "summary": "Get a Ingredient",
+                "description": "Gets the details of a single instance of a `Ingredient`.",
+                "tags": ["Ingredient"]
+            },
+            "put": {
+                "requestBody": {
+                    "description": "Updated `Ingredient` information.",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Ingredient"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "202": {
+                        "description": "Successful response."
+                    }
+                },
+                "operationId": "updateIngredient",
+                "summary": "Update a Ingredient",
+                "description": "Updates an existing `Ingredient`.",
+                "tags": ["Ingredient"]
+            },
+            "delete": {
+                "responses": {
+                    "204": {
+                        "description": "Successful response."
+                    }
+                },
+                "operationId": "deleteIngredient",
+                "summary": "Delete a Ingredient",
+                "description": "Deletes an existing `Ingredient`.",
+                "tags": ["Ingredient"]
+            },
+            "parameters": [
+                {
+                    "name": "ingredientId",
+                    "description": "A unique identifier for a `Ingredient`.",
+                    "schema": {
+                        "type": "string"
+                    },
+                    "in": "path",
+                    "required": true
+                }
+            ]
+        },
+        "/recettes": {
+            "summary": "Path used to manage the list of recettes.",
+            "description": "The REST endpoint/path used to list and create zero or more `recette` entities.  This path contains a `GET` and `POST` operation to perform the list and create tasks, respectively.",
+            "get": {
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/Recette"
+                                    }
+                                }
+                            }
+                        },
+                        "description": "Successful response - returns an array of `recette` entities."
+                    }
+                },
+                "operationId": "getrecettes",
+                "summary": "List All recettes",
+                "description": "Gets a list of all `recette` entities.",
+                "tags": ["Recette"]
+            },
+            "post": {
+                "requestBody": {
+                    "description": "A new `recette` to be created.",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Recette"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "201": {
+                        "description": "Successful response."
+                    }
+                },
+                "operationId": "createrecette",
+                "summary": "Create a recette",
+                "description": "Creates a new instance of a `recette`.",
+                "tags": ["Recette"]
+            }
+        },
+        "/recettes/{recetteId}": {
+            "summary": "Path used to manage a single recette.",
+            "description": "The REST endpoint/path used to get, update, and delete single instances of an `recette`.  This path contains `GET`, `PUT`, and `DELETE` operations used to perform the get, update, and delete tasks, respectively.",
+            "get": {
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Recette"
+                                }
+                            }
+                        },
+                        "description": "Successful response - returns a single `recette`."
+                    }
+                },
+                "operationId": "getrecette",
+                "summary": "Get a recette",
+                "description": "Gets the details of a single instance of a `recette`.",
+                "tags": ["Recette"]
+            },
+            "put": {
+                "requestBody": {
+                    "description": "Updated `recette` information.",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Recette"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "202": {
+                        "description": "Successful response."
+                    }
+                },
+                "operationId": "updaterecette",
+                "summary": "Update a recette",
+                "description": "Updates an existing `recette`.",
+                "tags": ["Recette"]
+            },
+            "delete": {
+                "responses": {
+                    "204": {
+                        "description": "Successful response."
+                    }
+                },
+                "operationId": "deleterecette",
+                "summary": "Delete a recette",
+                "description": "Deletes an existing `recette`.",
+                "tags": ["Recette"]
+            },
+            "parameters": [
+                {
+                    "name": "recetteId",
+                    "description": "A unique identifier for a `recette`.",
+                    "schema": {
+                        "type": "string"
+                    },
+                    "in": "path",
+                    "required": true
+                }
+            ]
+        },
+        "/recettes/findByIngredientId": {
+            "summary": "Chemin utilisé pour gérer toutes les recettes utilisants un ingrédient donné.",
+            "description": "Le Endpoint utilisé pour intéragir avec les recettes contenant un ingrédient précis. Il permet l'opération `GET`.",
+            "get": {
+                "parameters": [
+                    {
+                        "name": "IngredientId",
+                        "description": "Id de l'ingrédient demandé.",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/Recette"
+                                    }
+                                }
+                            }
+                        },
+                        "description": "Requête traitée avec succès."
+                    },
+                    "404": {
+                        "description": "Aucune recette trouvée."
+                    }
+                },
+                "summary": "Liste toutes les recette qui utilisent l'ingrédient donné.",
+                "description": "Renvoie une liste de toutes les recettes qui contiennent l'ingrédient demandé.",
+                "tags": ["Recette"]
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Ingredient": {
+                "title": "Root Type for Ingredient",
+                "description": "Représentation d'un ingrédient côté API. ",
+                "required": [
+                    "id",
+                    "Nom",
+                    "Unites"
+                ],
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    },
+                    "Nom": {
+                        "type": "string"
+                    },
+                    "Unites": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "example": {
+                    "id": "0000",
+                    "Nom": "Pain de Mie",
+                    "Unites": [
+                        "tranches",
+                        "grammes"
+                    ]
+                }
+            },
+            "Recette": {
+                "title": "Root Type for recette",
+                "description": "Représentation d'une recette côté API.",
+                "required": [
+                    "CreeeLe",
+                    "Description",
+                    "Difficulte",
+                    "Duree",
+                    "Etapes",
+                    "id",
+                    "Ingredients",
+                    "MiseAJourLe",
+                    "Nom",
+                    "NombreDeParts"
+                ],
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "description": "id de la recette",
+                        "type": "string",
+                        "example": "\"0000\""
+                    },
+                    "Nom": {
+                        "description": "\"Nom du plat préparé.\"",
+                        "type": "string",
+                        "example": "\"Sandwich aux glaçons\""
+                    },
+                    "Description": {
+                        "description": "Description de la recette",
+                        "type": "string",
+                        "example": "\"La recette originale du sandwich aux glaçons\""
+                    },
+                    "NombreDeParts": {
+                        "format": "int32",
+                        "description": "Nombre de portions prévues avec les quantité données pour les ingrédients.",
+                        "type": "integer",
+                        "example": "1"
+                    },
+                    "Ingredients": {
+                        "description": "Liste des ingrédients avec leur quantité et l'unité utilisée pour la mesurer.",
+                        "type": "array",
+                        "items": {},
+                        "example": "[\n    {\n        \"Ingredient\": {\n            \"id\": \"0000\",\n            \"Nom\": \"Pain de Mie\",\n            \"Unites\": [\n                \"tranche\",\n                \"gramme\"\n            ]\n        },\n        \"Quantite\": 2,\n        \"Unite\": \"tranche\"\n    },\n    {\n        \"Ingredient\": {\n            \"id\": \"0000\",\n            \"Nom\": \"Glace\",\n            \"Unites\": [\n                \"glaçon\",\n                \"gramme\",\n                \"L\"\n            ]\n        },\n        \"Quantite\": 2,\n        \"Unite\": \"glaçon\"\n    }\n]"
+                    },
+                    "Etapes": {
+                        "description": "Liste des étapes à suivre pour réaliser la recette.",
+                        "type": "array",
+                        "items": {},
+                        "example": "[\n    {\n        \"etape\": 1,\n        \"description\": \"Placer les deux tranches de pain de mie sur le plan de travail.\"\n    },\n    {\n        \"etape\": 2,\n        \"description\": \"Sur l'une des tranches déposer les deux glaçons répartie sur la longueur du pain et centré sur la largeur.\"\n    },\n    {\n        \"etape\": 3,\n        \"description\": \"Refermer le sandwich en plaçant la deuxième tranche sur la tranche avec les glaçons. Le sandwich est pret.\"\n    }\n]"
+                    },
+                    "Difficulte": {
+                        "description": "Niveau de difficulté de la recette",
+                        "type": "string",
+                        "example": "\"Facile\""
+                    },
+                    "Duree": {
+                        "description": "Temps nécessaire pour réaliser la recette",
+                        "properties": {
+                            "temps": {
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "duree": {
+                                "type": "string"
+                            }
+                        },
+                        "example": "{\n    \"temps\": 3,\n    \"duree\": \"minutes\"\n}"
+                    },
+                    "CreeeLe": {
+                        "format": "date",
+                        "description": "Date de création de la recette",
+                        "type": "string",
+                        "example": "\"2025-12-12\""
+                    },
+                    "MiseAJourLe": {
+                        "format": "date",
+                        "description": "Date de la dernière modification de la recette.",
+                        "type": "string",
+                        "example": "\"2025-12-12\""
+                    },
+                    "Image": {
+                        "description": "Lien vers une photo du plat réalisé.",
+                        "type": "string",
+                        "example": "\"https://pbs.twimg.com/media/EsmU-HEXMAcjBzq?format=jpg&name=small\""
+                    }
+                },
+                "example": {
+                    "id": "0000",
+                    "Nom": "Sandwich aux glaçons",
+                    "Description": "La recette originale du sandwich aux glaçons",
+                    "NombreDeParts": 1,
+                    "Ingredients": [
+                        {
+                            "Ingredient": {
+                                "id": "0000",
+                                "Nom": "Pain de Mie",
+                                "Unites": [
+                                    "tranche",
+                                    "gramme"
+                                ]
+                            },
+                            "Quantite": 2,
+                            "Unite": "tranche"
+                        },
+                        {
+                            "Ingredient": {
+                                "id": "0000",
+                                "Nom": "Glace",
+                                "Unites": [
+                                    "glaçon",
+                                    "gramme",
+                                    "L"
+                                ]
+                            },
+                            "Quantite": 2,
+                            "Unite": "glaçon"
+                        }
+                    ],
+                    "Etapes": [
+                        {
+                            "etape": 1,
+                            "description": "Placer les deux tranches de pain de mie sur le plan de travail."
+                        },
+                        {
+                            "etape": 2,
+                            "description": "Sur l'une des tranches déposer les deux glaçons répartie sur la longueur du pain et centré sur la largeur."
+                        },
+                        {
+                            "etape": 3,
+                            "description": "Refermer le sandwich en plaçant la deuxième tranche sur la tranche avec les glaçons. Le sandwich est pret."
+                        }
+                    ],
+                    "Difficulte": "Facile",
+                    "Duree": {
+                        "temps": 3,
+                        "duree": "minutes"
+                    },
+                    "CreeeLe": "12/12/2025",
+                    "MiseAJourLe": "12/12/2025",
+                    "Image": "https://pbs.twimg.com/media/EsmU-HEXMAcjBzq?format=jpg&name=small"
+                }
+            }
+        }
+    }
+}
